@@ -33,10 +33,6 @@
 									<span>Artist</span>
 									{{ slide.artist }}
 								</div>
-								<div class="songs__illustation">
-									<span>Illustration</span>
-									{{ slide.illustatation }}
-								</div>
 							</div>
 						</div>
 					</div>
@@ -89,6 +85,7 @@ body {
 	height: 100%;
 	display: flex;
 	position: relative;
+	padding: 0 20px;
 	flex-direction: row;
 	z-index: 1;
 }
@@ -96,18 +93,18 @@ body {
 .background-home {
 	display: flex;
 	justify-content: center;
-	align-items: flex-end;
+	align-items: center;
 	background: url("./assets/background-logo.svg") center no-repeat;
 	background-size: cover;
 	width: 100%;
 	height: 50vw;
 
 	&__logo {
-		background: url("./assets/logo.svg") center no-repeat;
-		background-size: cover;
-		width: 546px;
-		height: 147px;
-		margin-bottom: 100px;
+		background: url("./assets/background-logo.png") center no-repeat;
+		background-size: contain;
+		width: 600px;
+		height: 150px;
+		margin-top: 100px;
 	}
 }
 
@@ -155,13 +152,14 @@ body {
 
 	&__image {
 		width: 190px;
-		height: 190px;
+		height: 230px;
 	}
 
 	&__title {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-top: -4px;
 		background: #34333e;
 		color: #fff;
 		font-size: 1rem;
@@ -172,7 +170,7 @@ body {
 
 	&__info {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 		height: 61px;
 		background-color: #66676d;
@@ -233,7 +231,7 @@ body {
 		.slider {
 			&__slide {
 				width: 500px;
-				height: 300px;
+				height: 330px;
 				margin: 25px;
 			}
 		}

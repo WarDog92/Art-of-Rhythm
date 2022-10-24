@@ -34,6 +34,7 @@
 		background-size: contain;
 		width: 250px;
 		height: 60px;
+		margin: 0 20px;
 	}
 
 	&__menu {
