@@ -5,14 +5,14 @@ export default [
 	},
 	{
 		title: 'track-choose',
-		url: require('../screenshots/track-choose.png'),
+		url: require('../screenshots/track_choose.png'),
 	},
 	{
 		title: 'dificulty-choose',
-		url: require('../screenshots/dificulty-choose.png'),
+		url: require('../screenshots/dificulty_choose.png'),
 	},
 	{
 		title: 'track-play',
-		url: require('../screenshots/track-play.png'),
+		url: require('../screenshots/track_play.png'),
 	},
 ];
