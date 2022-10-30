@@ -57,6 +57,10 @@
 						</div>
 					</div>
 				</div>
+        <div style="position: relative;">
+          <img :src="imageUrl" class="screenshots__image_big" style="pointer-events: none">
+          <span class="flare"></span>
+        </div>
 			</div>
 		</div>
 	</div>
@@ -74,6 +78,28 @@ body {
 	box-sizing: border-box;
 	font-family: Open Sans,sans-serif;
 }
+
+.flare {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  transform: skewX(-45deg); // Наклон
+  animation: flareAnimation;
+  left: -150%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  animation: flareAnimation 3s infinite linear; // Время и тип анимации можно менять
+}
+
+@keyframes flareAnimation {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
 
 .container {
 	max-width: 1100px;
@@ -233,6 +259,14 @@ body {
 				width: 500px;
 				height: 330px;
 				margin: 25px;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+
+        &:hover {
+          box-shadow:0 10px 30px #555;
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+        }
 			}
 		}
 	}
@@ -245,8 +279,16 @@ body {
 	overflow: hidden;
 
 	&__image {
-		width: 500px;
-		height: 300px;
+		width: 300px;
+		height: 150px;
+
+    &_big {
+      width: 100%;
+      height: 50%;
+      border: 2px solid black;
+      box-shadow:10px 10px 50px black;
+      overflow-x: hidden;
+    }
 	}
 
 	&__header {
@@ -271,9 +313,17 @@ body {
 
 		.slider {
 			&__slide {
-				width: 500px;
-				height: 300px;
+        width: 300px;
+        height: 150px;
 				margin: 25px;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+
+        &:hover {
+          box-shadow:0 10px 30px #555;
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+        }
 			}
 		}
 	}
