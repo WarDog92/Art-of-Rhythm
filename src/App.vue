@@ -1,6 +1,9 @@
 <template>
 	<TheHeader></TheHeader>
 	<div class="page-content">
+		<div class="scroll-top" @click="scrollTop">
+			<div class="scroll-top__image"></div>
+		</div>
 		<div class="background-home">
 			<div class="background-home__logo"></div>
 		</div>
@@ -100,6 +103,31 @@ body {
   }
 }
 
+
+.scroll-top {
+	position: fixed;
+	z-index: 1001;
+	right: 10px;
+	bottom: 10px;
+	background: #fff;
+	opacity: 0.8;
+	padding: 10px;
+	border: 1px solid #eee;
+	box-shadow: 0 0 0 1px rgb(0 0 0 / 4%),
+				0 4px 4px rgb(0 0 0 / 4%),
+				0 30px 60px rgb(0 0 0 / 8%);
+	border-radius: 10px;
+	cursor: pointer;
+
+	&__image {
+		background: url("./assets/pngegg.png") center no-repeat;
+		background-size: cover;
+		transform: rotate(180deg);
+		width: 30px;
+		height: 30px;
+	}
+
+}
 
 .container {
 	max-width: 1100px;
@@ -246,7 +274,7 @@ body {
 		color: #fff;
 		font-size: 30px;
 		background: url("./assets/ScreenShots.svg") center no-repeat;
-		background-size: cover;
+		background-size: contain;
 		width: 485px;
 		height: 68px;
 	}
@@ -303,7 +331,7 @@ body {
 		color: #fff;
 		font-size: 30px;
 		background: url("./assets/ScreenShots.svg") center no-repeat;
-		background-size: cover;
+		background-size: contain;
 		width: 485px;
 		height: 68px;
 	}

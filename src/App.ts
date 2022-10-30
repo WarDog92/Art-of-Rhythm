@@ -2,7 +2,7 @@ import { Options, Vue } from 'vue-class-component';
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
 import Flicking, { EVENTS } from '@egjs/flicking';
-import { WillChangeEvent } from '@egjs/flicking/declaration/type/event';
+import { ChangedEvent } from '@egjs/flicking/declaration/type/event';
 import screenshotsData from "@/assets/data/ScreenshotsData";
 import songsData from "@/assets/data/SongsData";
 
@@ -15,7 +15,6 @@ import songsData from "@/assets/data/SongsData";
 export default class App extends Vue {
 
     private screenshotsSliderData = screenshotsData;
-
     private songsSliderData = songsData;
 
     private ScreenshotsSlider!: any;
@@ -32,7 +31,8 @@ export default class App extends Vue {
             align: 'prev',
             circular: true,
         })
-        this.ScreenshotsSlider.on(EVENTS.WILL_CHANGE, (e: WillChangeEvent) => {
+
+        this.ScreenshotsSlider.on(EVENTS.CHANGED, (e: ChangedEvent) => {
             this.currentIndexSlider = e.index;
         })
 
@@ -40,5 +40,9 @@ export default class App extends Vue {
 
     public get imageUrl() {
         return this.screenshotsSliderData[this.currentIndexSlider].url;
+    }
+
+    public scrollTop() {
+        window.scrollTo({top: 0, left: 0, behavior: "smooth"})
     }
 }
